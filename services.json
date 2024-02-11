@@ -1,0 +1,54 @@
+[
+    {
+      "name": "Sparkle Clean",
+      "description": "Professional cleaning service for homes and offices",
+      "price": 99.99,
+      "features": [
+        "Thorough cleaning: Our team is dedicated to providing a deep and comprehensive cleaning experience.",
+        "Experienced staff: Trust our skilled and experienced cleaning professionals for quality service.",
+        "Flexible scheduling: We understand your schedule, offering flexibility to meet your cleaning needs."
+      ]
+    },
+    {
+      "name": "Green Eco Cleaners",
+      "description": "Environmentally friendly cleaning solutions for a healthier home",
+      "price": 120.00,
+      "features": [
+        "Green cleaning products: We use eco-friendly cleaning products to minimize environmental impact.",
+        "Allergen-free: Our cleaning solutions are designed to be allergen-free, promoting a healthier home.",
+        "Safe for pets: Rest easy knowing our cleaning methods are safe and pet-friendly."
+      ]
+    },
+    {
+      "name": "Elite Maids",
+      "description": "Luxurious cleaning services for upscale residences",
+      "price": 199.99,
+      "features": [
+        "Premium cleaning tools: Experience luxury with our high-end cleaning tools and equipment.",
+        "Customized cleaning plans: Tailor our services to your specific needs with personalized cleaning plans.",
+        "Discreet service: Our professionals provide discreet and confidential cleaning for upscale residences."
+      ]
+    },
+    {
+      "name": "Quick & Clean Janitorial",
+      "description": "Efficient and reliable commercial cleaning services",
+      "price": 150.00,
+      "features": [
+        "Office cleaning: Trust us for efficient and thorough cleaning of your office spaces.",
+        "Floor maintenance: We offer specialized floor maintenance to keep your workspace looking its best.",
+        "24/7 availability: Count on us any time with our round-the-clock cleaning services."
+      ]
+    },
+    {
+      "name": "Spotless Home Solutions",
+      "description": "Specialized cleaning for a spotless and organized home",
+      "price": 89.99,
+      "features": [
+        "Organizing services: Beyond cleaning, we assist in organizing your living spaces for maximum comfort.",
+        "Detailed cleaning checklist: Our meticulous approach ensures every corner is cleaned to perfection.",
+        "Affordable pricing: Enjoy spotless cleanliness without breaking the bank with our affordable pricing."
+      ]
+    }
+    
+  ]
+  
