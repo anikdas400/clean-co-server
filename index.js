@@ -1,5 +1,5 @@
 const express = require('express')
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config()
 const app = express()
 
@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 
 // mongodb uri
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.393ceno.mongodb.net/clean-co?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.393ceno.mongodb.net/?retryWrites=true&w=majority`;
 
 // const uri ='mongodb://localhost:27017'
 
@@ -43,6 +43,14 @@ const client = new MongoClient(uri, {
     
 
         res.send(result)
+    })
+
+    app.delete('/api/v1/user/cancel-booking/:bookingId',async (req,res)=>{
+  
+      const id =req.params.bookingId
+      const query = {_id: new ObjectId(id)}
+      const result = await bookingCollection.deleteOne(query)
+      res.send(result)
     })
 
 
