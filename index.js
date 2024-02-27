@@ -1,5 +1,6 @@
 const express = require('express')
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+const jwt = require('jsonwebtoken');
 require('dotenv').config()
 const app = express()
 
@@ -51,6 +52,16 @@ const client = new MongoClient(uri, {
       const query = {_id: new ObjectId(id)}
       const result = await bookingCollection.deleteOne(query)
       res.send(result)
+    })
+
+    // creating token with jwt and send client
+    app.post('/api/v1/auth/access-token', async (req,res)=>{
+      const user = req.body
+      const token = jwt.sign(user,'secret')
+      console.log(token)
+      res.send(user)
+      
+
     })
 
 
