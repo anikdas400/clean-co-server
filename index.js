@@ -1,6 +1,7 @@
 const express = require('express')
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const jwt = require('jsonwebtoken');
+const cors = require('cors')
 const cookieParser = require('cookie-parser')
 require('dotenv').config()
 const app = express()
@@ -8,6 +9,10 @@ const app = express()
 // persers
 app.use(express.json())
 app.use(cookieParser())
+app.use(cors({
+  origin:["http://localhost:5173"],
+  credentials:true
+}))
 
 // mongodb uri
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.393ceno.mongodb.net/?retryWrites=true&w=majority`;
@@ -40,14 +45,14 @@ async function run() {
       const { token } = req.cookies
       // if client does not send token
       if (!token) {
-        return res.status(401).send({ message: " You are not authorized" })
+        return res.status(401).send({ message: " You are not authorized too" })
       }
 
 
       // verify a token symmetric
       jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, function (err, decoded) {
         if (err) {
-          return res.status(401).send({ message: " You are not authorized" })
+          return res.status(401).send({ message: " You are not authorized " })
         }
         //  attach decoded ueser to get other user
         req.user = decoded
@@ -81,6 +86,7 @@ async function run() {
         return res.status(403).send({ message: "forbidden access" })
 
       }
+
       let query = {}
       if (queryEmail) {
         query.email = queryEmail
